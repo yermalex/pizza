@@ -1,0 +1,111 @@
+@import '../../../styles/variables';
+
+.checkout {
+  margin-top: 140px;
+  margin-bottom: 105px;
+  font-family: "MullerRegular", sans-serif;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: $secondary2;
+    font-family: "MullerExtraBold", sans-serif;
+    font-size: 35px;
+    line-height: 45px;
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 100px;
+    }
+
+    > span {
+      color: $secondary3;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: $secondary3;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__img {
+    @media screen and (max-width: 1280px) {
+      width: 100%;
+    }
+  }
+}
+
+.form-wrapper {
+  align-self: flex-end;
+
+  @media screen and (max-width: 768px) {
+    margin: 100px 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1280px) {
+    width: 330px;
+  }
+
+  > *:not(:last-child){
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    padding: 17px 22px;
+    border-color: $secondary3;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    line-height: 1;
+    color: $secondary4;
+
+    &::placeholder {
+      font-size: 18px;
+      line-height: 1;
+      color: $secondary4;
+    }
+
+    &.error {
+      border-color: red;
+      color: red;
+
+      &::placeholder {
+        color: red;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    padding: 22px 0;
+    font-family: "MullerBold", sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    color: $btn-text;
+    background-color: $secondary2;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: $header-menu;
+      background-color: $primary;
+    }
+
+    &:disabled {
+      color: lighten($btn-text, 25%);
+      background-color: lighten($secondary2, 25%);
+      cursor: not-allowed;
+    }
+  }
+}

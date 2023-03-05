@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+// override
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1480px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1224px,
+);
+
+$modal-width: 100%;
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// fonts
+@font-face {
+  font-family: 'MullerRegular';
+  src: url('./assets/MullerRegular.ttf');
+}
+
+@font-face {
+  font-family: 'MullerBold';
+  src: url('./assets/MullerBold.ttf');
+}
+
+@font-face {
+  font-family: 'MullerExtraBold';
+  src: url('./assets/MullerExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'MullerBlack';
+  src: url('./assets/MullerBlack.ttf');
+}
+
+// shared
+.img-modal {
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+
+  .close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+  }
+
+  .modal-content,
+  .modal-body,
+  .img-carousel,
+  .carousel.slide,
+  .carousel-inner,
+  .carousel-item,
+  .item {
+    height: 100%;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

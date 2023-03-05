@@ -1,0 +1,35 @@
+<section class="checkout">
+  <div class="container">
+    <div class="row">
+      <div class="checkout__info col-12 col-lg-4">
+        <h3 class="checkout__title">
+          Хватит думать!
+          <br>
+          <span>Доставим заказ за 30 минут!</span>
+        </h3>
+        <p class="checkout__text">
+          Мы  гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+        </p>
+      </div>
+      <div class="form-wrapper col-12 col-md-6 col-lg-4 offset-xxl-1">
+        <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div *ngFor="let alert of alerts">
+            <alert [type]="alert.type" [dismissible]="true" (onClosed)="onClosed()">{{ alert.msg }}</alert>
+          </div>
+
+          <div class="validate-text" *ngIf="form.invalid && form.touched">Пожалуйста, заполните все поля!</div>
+
+          <input class="form__input" [ngClass]="{error: isValidControl('firstName')}" placeholder="Ваше имя" type="text" formControlName="firstName">
+          <input class="form__input" [ngClass]="{error: isValidControl('address')}" placeholder="Адрес доставки" type="text" formControlName="address">
+          <input class="form__input" [ngClass]="{error: isValidControl('phone')}" placeholder="Телефон" type="text" formControlName="phone">
+          <button class="form__btn" type="submit" [disabled]="form.invalid">Оформить заказ</button>
+        </form>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+        <img class="checkout__img" src="assets/pizza-form.png" alt="pizza">
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.product-list {
+  margin-top: 160px;
+
+  &__title {
+    margin-bottom: 60px;
+    color: $h3;
+    font-family: "MullerBold", sans-serif;
+    font-size: 35px;
+    text-align: center;
+  }
+}

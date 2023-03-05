@@ -1,0 +1,6 @@
+<article class="pizza-card">
+  <img class="pizza-card__img" (click)="showModal()" [src]="pizzaCard.src" [alt]="pizzaCard.title">
+  <h4 class="pizza-card__title">{{pizzaCard.title}}</h4>
+  <p class="pizza-card__description">{{pizzaCard.description}}</p>
+  <button type="button" class="pizza-card__btn">В корзину</button>
+</article>

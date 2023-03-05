@@ -1,0 +1,28 @@
+<section class="product-list">
+  <div class="container">
+    <h3 class="product-list__title">Выберите свою любимую пиццу</h3>
+
+    <div class="row">
+      <app-pizza-card
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let pizzaCard of pizzaCardList"
+        [pizzaCard]="pizzaCard"
+        (onShowModal)="openModal(template)"
+      >
+      </app-pizza-card>
+    </div>
+  </div>
+</section>
+
+<ng-template #template>
+  <div class="modal-body">
+    <button type="button" class="btn-close close close-modal-btn" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+    <carousel class="img-carousel">
+      <slide *ngFor="let pizzaCard of pizzaCardList">
+        <img class="slide" [src]="pizzaCard.src" [alt]="pizzaCard.title">
+      </slide>
+    </carousel>
+  </div>
+</ng-template>
